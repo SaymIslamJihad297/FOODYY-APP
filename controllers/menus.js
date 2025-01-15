@@ -13,7 +13,7 @@ module.exports.renderMenu = async (req, res)=>{
 module.exports.showDetailedMenu = async(req, res)=>{
     let id = req.params.id;
     // console.log(id);
-    let item = await Menu.findOne({_id: id});
+    let item = await Menu.findById(id).populate({path: "reviews", populate: "author"});
     console.log(item);
-    res.render('./user/details.ejs', {item});
+    res.render('./user/details.ejs', {item});   
 }

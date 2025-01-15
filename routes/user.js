@@ -1,12 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user.js');
 const passport = require('passport');
 const { isLoggedIn } = require('../middleware.js')
-const Menu = require('../models/menu.js');
 const WrapAsync = require('../utils/WrapAsync.js');
 const { renderDashboard, userSignUp, renderLoginPage, userLogin, renderSignUp, userLogOut } = require('../controllers/users.js');
 const { renderMenu, showDetailedMenu } = require('../controllers/menus.js');
+const {createReview, deleteReview} = require('../controllers/reviews.js');
 
 router.get('/dashboard', renderDashboard);
 
@@ -26,6 +25,9 @@ router.get('/menu', WrapAsync(renderMenu));
 
 router.get('/show/:id', WrapAsync(showDetailedMenu));
 
+// reviews routes getting started here
+router.post('/review/:id/new', isLoggedIn, WrapAsync(createReview));
 
+router.delete('/review/:id/:reviewId/delete', isLoggedIn, WrapAsync(deleteReview));
 
 module.exports = router;

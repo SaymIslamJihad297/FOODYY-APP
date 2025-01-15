@@ -10,6 +10,7 @@ const ejsMate = require('ejs-mate');
 const User = require('./models/user.js');
 const flash = require('connect-flash');
 const ExpressError = require('./utils/ExpressError.js');
+const methodOverride = require('method-override');
 
 const sessionOption = {
     secret: "mysecretkey",
@@ -28,6 +29,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static('public'));
 app.engine('ejs', ejsMate);
+app.use(methodOverride('_method'));
 
 main().then(()=>{
     console.log("Database connected");
