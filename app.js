@@ -9,7 +9,7 @@ const userRoutes = require('./routes/user.js');
 const ejsMate = require('ejs-mate');
 const User = require('./models/user.js');
 const flash = require('connect-flash');
-const Menu = require('./models/menu.js');
+const ExpressError = require('./utils/ExpressError.js');
 
 const sessionOption = {
     secret: "mysecretkey",
@@ -57,6 +57,15 @@ app.get('/home', (req, res)=>{
 
 app.use('/', userRoutes);
 
+
+app.all('*', (req, res, next)=>{
+    next(new ExpressError(404, "Page Not Found!"));
+})
+
+app.use((err, req, res, next)=>{
+    let {status = 505, message = "Error happend!"} = err;
+    res.status(status).render('error.ejs', {status, message});
+})
 
 async function main() {
     await mongoose.connect('mongodb://127.0.0.1:27017/foodyyapp');
