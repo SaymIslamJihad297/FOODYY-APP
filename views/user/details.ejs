@@ -1,0 +1,22 @@
+<%- layout('./layouts/boilerplate') %>
+    <a href="/menu"><button class="btn btn-circle btn-outline btn-warning hover:scale-125">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </button></a>
+    <section class="mt-[-3rem]">
+        <div class="hero bg-base-200 min-h-screen">
+            <div class="hero-content flex-col lg:flex-row">
+                <img src="<%= item.foodimage %>" class="max-w-sm rounded-lg shadow-2xl w-80 hover:scale-125 animate-bounce" />
+                <div class="animate-bounce">
+                    <h1 class="text-5xl font-bold">
+                        <%= item.foodname %>
+                    </h1>
+                    <p class="py-6">
+                        <%= item.foodDetails %>
+                    </p>
+                    <button class="btn btn-outline btn-warning hover:scale-125">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </section>

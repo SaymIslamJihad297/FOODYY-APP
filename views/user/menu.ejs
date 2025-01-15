@@ -1,0 +1,16 @@
+<%- layout('./layouts/boilerplate') %>
+<section class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ml-14 mr-14">
+    <% for(data of datas){ %>
+        <div class="card hover:bg-gray-400 bg-orange-400 text-primary-content cursor-cell hover:scale-105">
+            <div class="card-body">
+              <h2 class="card-title"><%= data.foodname %></h2>
+              <p><%= data.foodDetails %></p>
+              <div class="card-actions justify-end">
+                <form action="/show/<%= data._id %>">
+                    <button class="btn hover:btn-warning hover:scale-125">Show Details</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        <% } %>
+</section>

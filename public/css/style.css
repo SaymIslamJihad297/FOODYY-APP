@@ -1,0 +1,11 @@
+#text {
+    border-right: 2px solid orange;
+    width: calc(100% + 8px);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor{
+    50%{border-color: transparent;}
+}

@@ -1,0 +1,104 @@
+let result = await Menu.insertMany(
+    [
+        {
+            foodname: "pasta",
+            foodimage: "https://images.unsplash.com/photo-1529042355636-0f06afe127a9?q=80&w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Pasta is a traditional Italian dish made from durum wheat and often served with a variety of sauces."
+        },
+        {
+            foodname: "burger",
+            foodimage: "https://images.unsplash.com/photo-1508737027454-e6454ef45afd?q=80&w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "A burger consists of a cooked patty of ground meat, usually placed inside a sliced bread roll or bun."
+        },
+        {
+            foodname: "pizza",
+            foodimage: "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Pizza is a popular Italian dish featuring a round flatbread topped with tomato sauce, cheese, and various toppings."
+        },
+        {
+            foodname: "sushi",
+            foodimage: "https://images.unsplash.com/photo-1624904025431-d905ca1ba91e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Sushi is a Japanese dish made with vinegared rice, often accompanied by raw fish, vegetables, and seaweed."
+        },
+        {
+            foodname: "sandwich",
+            foodimage: "https://images.unsplash.com/photo-1604467707321-70d5ac45adda?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "A sandwich typically consists of two slices of bread with a filling such as meat, cheese, or vegetables."
+        },
+        {
+            foodname: "fried chicken",
+            foodimage: "https://images.unsplash.com/photo-1627662236973-4fd8358fa206?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Fried chicken is chicken pieces that have been battered and deep-fried to crispy perfection."
+        },
+        {
+            foodname: "salad",
+            foodimage: "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Salad is a dish consisting of mixed vegetables, often served with dressing and sometimes with protein toppings."
+        },
+        {
+            foodname: "tacos",
+            foodimage: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Tacos are a traditional Mexican dish made with folded or rolled tortillas filled with various ingredients."
+        },
+        {
+            foodname: "biryani",
+            foodimage: "https://images.unsplash.com/photo-1701579231305-d84d8af9a3fd?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Biryani is a flavorful South Asian rice dish made with spices, meat, or vegetables."
+        },
+        {
+            foodname: "ramen",
+            foodimage: "https://images.unsplash.com/photo-1591325418441-ff678baf78ef?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Ramen is a Japanese noodle soup served in a broth with toppings like meat, egg, and green onions."
+        },
+        {
+            foodname: "hotdog",
+            foodimage: "https://images.unsplash.com/photo-1541214113241-21578d2d9b62?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "A hotdog is a cooked sausage served in a sliced bun, often topped with mustard, ketchup, and onions."
+        },
+        {
+            foodname: "steak",
+            foodimage: "https://images.unsplash.com/photo-1432139509613-5c4255815697?q=80&w=1370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Steak is a thick slice of high-quality beef, typically grilled or pan-fried to desired doneness."
+        },
+        {
+            foodname: "dumplings",
+            foodimage: "https://images.unsplash.com/photo-1523905330026-b8bd1f5f320e?q=80&w=1479&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Dumplings are dough pockets often filled with meat or vegetables, commonly steamed, boiled, or fried."
+        },
+        {
+            foodname: "chow mein",
+            foodimage: "https://images.unsplash.com/photo-1634864572872-a01c21e388d4?q=80&w=1634&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Chow mein is a Chinese stir-fried noodle dish with vegetables and optional meat or tofu."
+        },
+        {
+            foodname: "fried rice",
+            foodimage: "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Fried rice is a dish made by stir-frying cooked rice with vegetables, eggs, and sometimes meat."
+        },
+        {
+            foodname: "lasagna",
+            foodimage: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Lasagna is an Italian pasta dish layered with sauce, cheese, and fillings like meat or vegetables."
+        },
+        {
+            foodname: "noodles",
+            foodimage: "https://images.unsplash.com/photo-1496114212242-bac8bd9de53d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Noodles are a staple food made from unleavened dough, often served in soups or stir-fried."
+        },
+        {
+            foodname: "ice cream",
+            foodimage: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Ice cream is a frozen dessert made from dairy, sugar, and flavors, available in various varieties."
+        },
+        {
+            foodname: "pancakes",
+            foodimage: "https://images.unsplash.com/photo-1460103841677-11ff72e1f0b9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Pancakes are flat cakes made from batter and cooked on a griddle, often served with syrup."
+        },
+        {
+            foodname: "waffles",
+            foodimage: "https://images.unsplash.com/photo-1516658273235-6f3ff3b414d1?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            foodDetails: "Waffles are leavened batter or dough cooked between plates to create a distinctive grid pattern."
+        }
+    ]
+)

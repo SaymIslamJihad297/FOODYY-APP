@@ -1,0 +1,12 @@
+<%- layout('./layouts/boilerplate') %>
+<div class="flex justify-center">
+    <div class="card bg-green-400 text-primary-content w-96">
+        <div class="card-body">
+          <h2 class="card-title"><%= userInfo.username %></h2>
+          <p><%= userInfo.email %></p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-error hover:scale-125"><a href="/logout">Log Out</a></button>
+          </div>
+        </div>
+      </div>
+</div>
