@@ -1,0 +1,24 @@
+<%- layout('./layouts/boilerplate') %>
+<section class="admin flex flex-row justify-center">
+    <div class="w-96">
+        <form action="/menu/admin" method="post">
+            <label class="input input-bordered flex items-center gap-2 mb-5">
+                Food Name
+                <input type="text" name="item[foodname]" class="grow" />
+              </label>
+            <label class="input input-bordered flex items-center gap-2 mb-5">
+                Food Image Link
+                <input type="text" name="item[foodimage]" class="grow" />
+              </label>
+            <label class="input input-bordered flex items-center gap-2 mb-5">
+                Food Details
+                <input type="text" name="item[foodDetails]" class="grow" />
+              </label>
+            <label class="input input-bordered flex items-center gap-2 mb-5">
+                Admin Password
+                <input type="text" name="password" class="grow" />
+              </label>
+              <button class="btn btn-outline btn-warning hover:scale-125">Add Item</button>
+        </form>
+    </div>
+</section>

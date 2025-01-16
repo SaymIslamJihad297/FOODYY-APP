@@ -1,9 +1,14 @@
+if(process.env.NODE_ENV != "production"){
+    require('dotenv').config();
+}
+
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const localStrategy = require('passport-local');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const path = require('path');
 const userRoutes = require('./routes/user.js');
 const ejsMate = require('ejs-mate');
@@ -12,8 +17,25 @@ const flash = require('connect-flash');
 const ExpressError = require('./utils/ExpressError.js');
 const methodOverride = require('method-override');
 
+const secretKey = process.env.SECRET_KEY;
+const dbUrl = process.env.ATLAS_URL;
+
+const store = MongoStore.create({
+    mongoUrl: dbUrl,
+    crypto: {
+        secret: secretKey,
+    },
+    touchAfter: 24*3600,
+});
+
+store.on("error", ()=>{
+    console.log("Error in mongo session store", err);
+    
+})
+
 const sessionOption = {
-    secret: "mysecretkey",
+    store,
+    secret: secretKey,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -70,7 +92,7 @@ app.use((err, req, res, next)=>{
 })
 
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/foodyyapp');
+    await mongoose.connect(dbUrl);
 }
 
 app.listen(8080, ()=>{

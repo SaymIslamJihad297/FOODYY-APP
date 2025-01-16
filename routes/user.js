@@ -5,7 +5,9 @@ const { isLoggedIn } = require('../middleware.js')
 const WrapAsync = require('../utils/WrapAsync.js');
 const { renderDashboard, userSignUp, renderLoginPage, userLogin, renderSignUp, userLogOut } = require('../controllers/users.js');
 const { renderMenu, showDetailedMenu } = require('../controllers/menus.js');
-const {createReview, deleteReview} = require('../controllers/reviews.js');
+const { createReview, deleteReview } = require('../controllers/reviews.js');
+const Menu = require('../models/menu.js');
+const { createMenuItem, renderCreateMenu } = require('../controllers/menu_admin.js');
 
 router.get('/dashboard', renderDashboard);
 
@@ -29,5 +31,14 @@ router.get('/show/:id', WrapAsync(showDetailedMenu));
 router.post('/review/:id/new', isLoggedIn, WrapAsync(createReview));
 
 router.delete('/review/:id/:reviewId/delete', isLoggedIn, WrapAsync(deleteReview));
+
+
+// admin menu add
+
+router.route('/menu/admin')
+    .get(renderCreateMenu)
+    .post(isLoggedIn, WrapAsync(createMenuItem));
+
+
 
 module.exports = router;
