@@ -75,6 +75,10 @@ app.use((req, res, next)=>{
     next();
 })
 
+app.get('/', (req, res)=>{
+    res.redirect('/home');
+})
+
 app.get('/home', (req, res)=>{
     res.render('./main/home.ejs');
 })
